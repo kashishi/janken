@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>ダンジョン</title>
+</head>
+<body>
+  <h1>いつでも本田とじゃんけん</h1>
+  <div class="img_janken">
+    <img id="mypic" onclick="slideshow()" src="img/IMG_0.jpg" >
+  </div>
+  <ul>
+    <li id="gu_btn">ぐーで勝つ！</li><a href=""></a>
+    <li id="cho_btn">チョキで勝つ！</li>
+    <li id="par_btn">パーで勝つ！</li>
+  </ul>
+    
+  <div id="com_hand" class="hand">本田が出した手は？</div>
+  <div id="result" class="result">結果は？</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    var pics_src = new Array("img/IMG_0.jpg","img/IMG_1.jpg", "img/IMG_2.jpg", "img/IMG_3.jpg", "img/IMG_4.jpg", "img/IMG_5.jpg", "img/IMG_6.jpg", "img/IMG_7.jpg");
+    var num = 0;
+
+    function slideshow() {
+      if (num == 7) {
+        num = 0;
+      }
+      else {
+        num++;
+      }
+      document.getElementById("mypic").src = pics_src[num];
+    }
+
+  $('#gu_btn').on('click', function () {
+      const min = 0
+      const max = 9
+      const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomnumber)
+
+      if (randomnumber === 0) {
+        $('#com_hand').text('チョキ');
+      } else {
+        $('#com_hand').text('パー');
+      }
+      if (randomnumber === 0) {
+        $('#result').text('YOU WIN！');
+      } else {
+        $('#result').text('YOU LOSE');
+      }
+    })
+
+    $('#cho_btn').on('click', function () {
+      const min = 0
+      const max = 9
+      const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomnumber)
+
+      if (randomnumber === 0) {
+        $('#com_hand').text('パー');
+      } else {
+        $('#com_hand').text('グー');
+      }
+      if (randomnumber === 0) {
+        $('#result').text('YOU WIN！');
+      } else {
+        $('#result').text('YOU LOSE');
+      }
+    })
+
+    $('#par_btn').on('click', function () {
+      const min = 0
+      const max = 9
+      const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomnumber)
+
+      if (randomnumber === 0) {
+        $('#com_hand').text('グー');
+      } else {
+        $('#com_hand').text('チョキ');
+      }
+      if (randomnumber === 0) {
+        $('#result').text('YOU WIN！');
+      } else {
+        $('#result').text('YOU LOSE');
+      }
+    })
+
+  </script>
+</body>
+</html>
