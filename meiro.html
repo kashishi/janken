@@ -54,6 +54,11 @@
       } else {
         $('#result').text('YOU LOSE');
       }
+      if (randomnumber === 0) {
+      $('.img_janken').img('img src = "img/win.mp4"');
+    } else {
+      $('.img_janken').img('img src = "img/pa.mp4"');
+    }
     })
 
     $('#cho_btn').on('click', function () {
@@ -72,6 +77,11 @@
       } else {
         $('#result').text('YOU LOSE');
       }
+      if (randomnumber === 0) {
+        $('.img_janken').img('img src = "img/win.mp4"');
+      } else {
+        $('.img_janken').img('img src = "img/gu.MOV"');
+      }
     })
 
     $('#par_btn').on('click', function () {
@@ -89,6 +99,11 @@
         $('#result').text('YOU WIN！');
       } else {
         $('#result').text('YOU LOSE');
+      }
+      if (randomnumber === 0) {
+        $('.img_janken').img('img src = "img/win.mp4"');
+      } else {
+        $('.img_janken').img('img src = "img/tyoki.MOV"');
       }
     })
 
